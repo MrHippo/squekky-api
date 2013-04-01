@@ -10,7 +10,7 @@ Get your activities by making a JavaScript/AJAX request to __http://squekky.com/
 A JSON object isn't overly useful by itself and you will likely want to translate it into something meaningful for display to your users. __squekky-cms-interface__ is a collection of HTML, CSS, and JavaScript you can use to retrieve your activities from Squekky.com and have them inserted into your webpage in a way that looks similar to the layout on Squekky.com(.au).
 
 ## Add your activities to your webpage in 5 minutes ##
-If you are happy with how the activities look on Squekky, you can just download all files into the same directory and change the "data-squekky-id" attribute in activities-demo.html to your Squekky web_service_id. Your Squekky web_service_id is displayed on the Manage activities tab of Squekky.com(.au).
+If you are happy with how the activities look on Squekky, you can just download all files into the same directory and change the "data-squekky-id" attribute in activities-demo.html to your Squekky web service id. Your Squekky web service id is displayed on the Manage activities tab of Squekky.com(.au).
 
 You can then add any additional content you like to the page and put in on a server somewhere. Done!
 
