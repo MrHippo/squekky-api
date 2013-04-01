@@ -1,7 +1,9 @@
 squekky-cms-interface
 =====================
 
-The most current version of your Squekky activities can be downloaded from the Squekky.com(.au) server and automatically included in a webpage of your choice. "Current" here means the latest activites you submitted to Squekky regardless of whether they are approved, not-approved, or under review. In this way, changes made to your Squekky activities will appear on your webpage immediately.
+Squekky (http://squekky.com) is a website for promoting activities (things to do) to people who might be interested. It is location based, allowing people to find things to do in their local area.
+
+The most current version of your Squekky activities can be downloaded from the Squekky server and automatically included in a webpage of your choice. "Current" here means the latest activities you submitted to Squekky regardless of whether they are approved, not-approved, or under review. In this way, changes made to your Squekky activities will appear on your webpage immediately.
 
 ## Usage ##
 
@@ -16,7 +18,7 @@ You can then add any additional content you like to the page and put in on a ser
 
 If you would like something a bit different, you can of course edit the code or write something new. This is just an example.
 
-## Expanation of included files ##
+## Explanation of included files ##
 
 * __squekky-activities-demo.js__ - example JavaScript which makes the AJAX request, interprets the returned JSON object in a way similar to Squekky.com(.au), and populates the DOM (webpage) of activities-demo.html.
 
