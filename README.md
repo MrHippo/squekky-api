@@ -1,7 +1,7 @@
 squekky-api
 =====================
 
-Squekky (http://squekky.com) is a website for promoting activities (things to do) to people who might be interested. It is location based, allowing people to find things to do in their local area.
+Squekky (http://squekky.com) is a website for promoting activities (things to do) to people who might be interested. Squekky allows activity providers to enter all sorts of details about their activities - prices, contacts, dates, times, etc. The activities are then searchable by Squekky users - predominantly by location.
 
 The most current version of your Squekky activities can be downloaded from the Squekky server and automatically included in a webpage of your choice. "Current" here means the latest activities you submitted to Squekky - regardless of whether they are approved, not-approved, or under review. In this way, changes made to your Squekky activities will appear on your webpage immediately.
 
