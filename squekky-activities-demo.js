@@ -7,12 +7,47 @@ $(function(){
 	var url = 'http://squekky.com/get-activities-for?id=' + activities_jq.data('squekkyId');
 	
 	
-	$.ajax({
-		url: url,
-		dataType: 'json'
-				
-	}).done(function( data ) {
+	
+	/***
+	 * Request data from server using AJAX. Use XDR for IE and standard jQuery AJAX for other browsers.
+	 ***/
+	if (window.XDomainRequest) {
 		
+		var xdr = new XDomainRequest();
+		if (xdr) {
+			xdr.onerror = error_loading_activities;
+			xdr.onload = function() { load_data_into_dom(xdr.responseText) };
+			xdr.open("get", url);
+			xdr.send();
+		} else {
+			// Error using xdr
+			activities_jq.html('<p>Error loading activities</p>');
+		}
+	
+	// No XDomainRequest - use jQuery ajax
+	} else {
+		
+		$.ajax({
+			url: url,
+			dataType: 'json'
+					
+		})
+		.done(function(data) { 	load_data_into_dom(data)  })
+		.fail(function() {
+			error_loading_activities()
+		});
+		
+	}
+	
+		
+	/***
+	 * Interpet the AJAX response from Squekky.
+	 * 
+	 * Response will either be straight text (e.g. 'id not found'), or JSON data of activities.
+	 * 
+	 ***/
+	function load_data_into_dom( data ) {
+			
 		if (data == 'id not found') {
 			activities_jq.html('<p>Error loading activities</p>');
 		
@@ -22,13 +57,25 @@ $(function(){
 			activities_jq.html('<p>Fun and interesting activities will appear here soon!</p>');
 		
 		} else {
-			add_activities_to_dom( data );
+					
+			// If data is a string it will need to be converted to JavaScript. A response from IE (which uses XDR) will be a plain string. jQuery automatically parses the JSON string into a JavaScript object and so for non-IE (non-xdr) browsers, data is already a JavaScript object.
+			if (typeof data === 'string') {
+				data = $.parseJSON(data);
+			}
+			
+			add_activities_to_dom(data);
 		}
 		
-	}).fail(function() {
+	}
+	
+	
+	/***
+	 * Executed if there was an AJAX error when contacting the Squekky server.
+	 ***/
+	function error_loading_activities() {
 		/* This message will be displayed if there was an error retreiving the details from Squekky. This shouldn't actually occur */
 		activities_jq.html('<p>Our activities would normally appear here but there was an error retreiving them from Squekky.</p>'); 
-	});
+	}
 	
 	
 
@@ -46,6 +93,11 @@ $(function(){
 		for (i in activities) {
 			
 			var activity = activities[i];
+			
+			
+			//activities_jq.append($('<div class="title-row">' + activity.name + '</div>\
+			//<div>something else</div>'));
+			
 			
 			activities_jq.append($('<div class="activity clearfix">\
 				<div class="title-row">' + activity.name + '</div>\
@@ -185,38 +237,38 @@ $(function(){
 									s = s + 
 									'<div class="details-icons">\
 										<div class="details-icon-heading">';
-										if (activity.contacts[j].contact_type.toLowerCase() == 'phone') {
-											s = s +
-											'<div class="icon">\
-												<img class="sprite phone-icon" src="empty.png">\
-											</div>\
-											Phone'
-										} else if (activity.contacts[j].contact_type.toLowerCase() == 'twitter') {
-											s = s +
-											'<div class="icon">\
-												<img class="sprite twitter-icon" src="empty.png">\
-											</div>\
-											Twitter'
-										} else if (activity.contacts[j].contact_type.toLowerCase() == 'e-mail') {
-											s = s +
-											'<div class="icon">\
-												<img class="sprite email-icon" src="empty.png">\
-											</div>\
-											E-mail'
-										} else {
-											s = s +
-											'<div class="icon">\
-												<img class="sprite no-icon" src="empty.png">\
-											</div>' + 
-											activity.contacts[j].contact_type
-										}
-										s = s + 
+									if (activity.contacts[j].contact_type.toLowerCase() == 'phone') {
+										s = s +
+										'<div class="icon">\
+											<img class="sprite phone-icon" src="empty.png">\
+										</div>\
+										Phone';
+									} else if (activity.contacts[j].contact_type.toLowerCase() == 'twitter') {
+										s = s +
+										'<div class="icon">\
+											<img class="sprite twitter-icon" src="empty.png">\
+										</div>\
+										Twitter';
+									} else if (activity.contacts[j].contact_type.toLowerCase() == 'e-mail') {
+										s = s +
+										'<div class="icon">\
+											<img class="sprite email-icon" src="empty.png">\
+										</div>\
+										E-mail';
+									} else {
+										s = s +
+										'<div class="icon">\
+											<img class="sprite no-icon" src="empty.png">\
+										</div>' + 
+										activity.contacts[j].contact_type;
+									}
+									s = s + 
 										'</div>\
 										<div class="details-icon-info">' + activity.contacts[j].contact + '</div>\
 									</div>';
 								}
 							}
-							s = s + '</div>';
+							//s = s + '</div>';
 							return s;
 						})() + 
 						'<div class="comments">\

@@ -6,6 +6,8 @@
 	margin-right: -9px;
 	float: left;
 	text-align: left;}
+#squekky-activities th {
+	text-align: left;}
 #squekky-activities th, td {
 	padding: 3px 10px 5px 2px;
 	font-weight:normal;}
