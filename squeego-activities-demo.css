@@ -1,0 +1,132 @@
+#squeego-activities table {
+	font-size: 1.0em;
+	border-collapse: collapse;
+	border: 0px;
+	margin-left: 4px;
+	margin-right: -9px;
+	float: left;
+	text-align: left;}
+#squeego-activities th {
+	text-align: left;}
+#squeego-activities th, td {
+	padding: 3px 10px 5px 2px;
+	font-weight:normal;}
+#squeego-activities .sunday {
+	padding-bottom: 1em;}
+
+
+#squeego-activities {
+	width: 550px;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin:0 auto;}
+
+
+
+#squeego-activities .activity {
+	margin-top: 20px;
+	text-align: left;
+	padding: 5px;}
+
+#squeego-activities .title-row {
+	float: left;
+	width: 100%;
+	vertical-align: top;
+	display: inline;
+	font-size: 1.5em;}
+
+#squeego-activities .activity-info {
+	margin-bottom: 20px;
+	clear: both;
+	width: 100%;
+	float: left;}
+
+
+#squeego-activities .icons-column {
+	max-width: 45%;
+	float: right;
+	padding-left: 10px;
+	padding-bottom: 10px;}
+#squeego-activities .cost, 
+#squeego-activities .time, 
+#squeego-activities .other-icons {
+	margin-top: 15px; 
+	float:left;
+	width:auto;}
+#squeego-activities .time-icon, 
+#squeego-activities .cost-icon {
+	margin-top: 0px;
+	float:left; }
+#squeego-activities .other-icons {
+	clear: both;
+	margin-bottom: 3px;}
+#squeego-activities .other-icons > .sprite {
+	padding-right: 5px;}
+#squeego-activities .date-ranges tr {
+	vertical-align:top;}
+
+
+#squeego-activities .details {
+	margin-top: 20px;}
+#squeego-activities .details > .arrow-content {
+	margin-left: 0px;}
+#squeego-activities .details-icons {
+	margin-top: 20px;}
+#squeego-activities .details-icons > div {
+	margin-top: 10px;}
+#squeego-activities .details-icon-address {
+	margin-bottom: 20px;}
+#squeego-activities .details-icon-heading {
+	clear: left;
+	float: left;
+	width: 20%;
+	vertical-align: top;}
+#squeego-activities .details-icon-heading > .icon {
+	float: left;
+	width: 25px;}
+#squeego-activities .details-icon-info {
+	width: auto;
+	float:left;}
+
+
+#squeego-activities .comments {
+	clear: left;
+	float: left;
+	margin-bottom: 15px;
+	margin-top: 35px; }
+#squeego-activities .comments-icon {
+	display: inline-block;
+	vertical-align: top; }
+#squeego-activities .action-link-button {
+	cursor: pointer;}
+
+#squeego-activities .address-icon, 
+#squeego-activities .twitter-icon, 
+#squeego-activities .internet-icon {
+	vertical-align: middle;
+	padding-right: 5px;}
+
+
+#squeego-activities .sprite { background: url('squeego-sprite.png') no-repeat top left;  } 
+#squeego-activities .sprite.time-icon { background-position: 0px 0px; width: 20px; height: 20px;  } 
+#squeego-activities .sprite.cost-icon { background-position: -30px 0px; width: 20px; height: 20px;  } 
+#squeego-activities .sprite.comments-icon { background-position: -60px 0px; width: 21px; height: 15px;  } 
+#squeego-activities .sprite.expires-icon { background-position: -91px 0px; width: 20px; height: 20px;  } 
+#squeego-activities .sprite.twitter-icon { background-position: -121px 0px; width: 20px; height: 20px;  } 
+#squeego-activities .sprite.email-icon { background-position: -151px 0px; width: 18px; height: 13px;  } 
+#squeego-activities .sprite.internet-icon { background-position: -179px 0px; width: 22px; height: 21px;  } 
+#squeego-activities .sprite.address-icon { background-position: -211px 0px; width: 21px; height: 26px;  } 
+#squeego-activities .sprite.phone-icon { background-position: -242px 0px; width: 21px; height: 15px;  } 
+#squeego-activities .sprite.eftpos-icon { background-position: -273px 0px; width: 31px; height: 20px;  } 
+#squeego-activities .sprite.mastercard-icon { background-position: -314px 0px; width: 33px; height: 20px;  } 
+#squeego-activities .sprite.visa-icon { background-position: -357px 0px; width: 62px; height: 20px;  } 
+#squeego-activities .sprite.eighteenplus-icon { background-position: -429px 0px; width: 21px; height: 20px;  } 
+#squeego-activities .sprite.alcohol-icon { background-position: -460px 0px; width: 20px; height: 20px;  } 
+#squeego-activities .sprite.wheelchair-icon { background-position: -490px 0px; width: 20px; height: 20px;  } 
+
+#squeego-activities .sprite.no-icon { width: 26px; height: 21px; background-position: 30px 0px;  } 
+
+#squeego-activities hr {
+	border: solid 1px #CCC;}
+
+.clearfix:before,.clearfix:after{content:"";display:table;}.clearfix:after{clear:both;}.clearfix{zoom:1;}

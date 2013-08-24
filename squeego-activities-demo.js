@@ -1,10 +1,10 @@
 $(function(){
 	
 	// The name of the html element where all the activities will go
-	var activities_jq = $('#squekky-activities');
+	var activities_jq = $('#squeego-activities');
 	
-	// Your squekky url
-	var url = 'http://squekky.com/get-activities-for?id=' + activities_jq.data('squekkyId');
+	// Your squeego url
+	var url = 'http://squeego.com/get-activities-for?id=' + activities_jq.data('squeegoId');
 	
 	
 	
@@ -41,7 +41,7 @@ $(function(){
 	
 		
 	/***
-	 * Interpet the AJAX response from Squekky.
+	 * Interpet the AJAX response from SqueeGo.
 	 * 
 	 * Response will either be straight text (e.g. 'id not found'), or JSON data of activities.
 	 * 
@@ -52,8 +52,8 @@ $(function(){
 			activities_jq.html('<p>Error loading activities</p>');
 		
 		} else if (data == 'activities not found') {
-			/* This will be executed if there were no activities in the Squekky database for your id. You can easily add some at squekky.com. 
-			 * Squekky has a review process to ensure the quality of content on squekky.com but unreviewed activities are added to the Squekky database immediately and will be returned with your activity request - so you can get started straight away! */
+			/* This will be executed if there were no activities in the SqueeGo database for your id. You can easily add some at squeego.com. 
+			 * SqueeGo has a review process to ensure the quality of content on squeego.com but unreviewed activities are added to the SqueeGo database immediately. This means both unreviewed and reviewed activities are returned with your activity request - so you can get started straight away! */
 			activities_jq.html('<p>Fun and interesting activities will appear here soon!</p>');
 		
 		} else {
@@ -70,17 +70,17 @@ $(function(){
 	
 	
 	/***
-	 * Executed if there was an AJAX error when contacting the Squekky server.
+	 * Executed if there was an AJAX error when contacting the SqueeGo server.
 	 ***/
 	function error_loading_activities() {
-		/* This message will be displayed if there was an error retreiving the details from Squekky. This shouldn't actually occur */
-		activities_jq.html('<p>Our activities would normally appear here but there was an error retreiving them from Squekky.</p>'); 
+		/* This message will be displayed if there was an error retreiving the details from SqueeGo. This shouldn't actually occur */
+		activities_jq.html('<p>Our activities would normally appear here but there was an error retreiving them from SqueeGo.</p>'); 
 	}
 	
 	
 
 	/***
-	 * Example code which interprets the activities data in a similar way to the Squekky website. You can edit this code to interpret the data in any way you like. You could also use it to bring in data from other parts of your website. Squekky sends you all your activity data so you can do with it as you please.
+	 * Example code which interprets the activities data in a similar way to the SqueeGo website. You can edit this code to interpret the data in any way you like. You could also use it to bring in data from other parts of your website. SqueeGo sends you all your activity data so you can do with it as you please.
 	 * 
 	 * This function does the main work of adding the activities data to the DOM (your web page).
 	 ***/
@@ -273,7 +273,7 @@ $(function(){
 						})() + 
 						'<div class="comments">\
 							<span class="sprite comments-icon action-link-button"></span>\
-							<a href="' + activity.squekky_url + '">Discuss this activity on Squekky</a>\
+							<a href="' + activity.squeego_url + '">Discuss this activity on SqueeGo!</a>\
 						</div>\
 					</div><!-- end of details -->\
 				</div>\
@@ -289,7 +289,7 @@ $(function(){
 
 
 /***
- * Convenience function to convert the price (stored as cents by Squekky) into dollars and cents 
+ * Convenience function to convert the price (stored as cents by SqueeGo) into dollars and cents 
  ***/
 function dollarify(amount) {
 	// Instead of having a 0 value - say 'Free' instead.
@@ -302,7 +302,7 @@ function dollarify(amount) {
 }
 
 /***
- * Convenience function to convert a Squekky stored date (yyyymmdd) into a normal date dd mmm.
+ * Convenience function to convert a SqueeGo stored date (yyyymmdd) into a normal date dd mmm.
  ***/
 function dateify(d) {
 	d = new Date(d.slice(0,4), d.slice(4,6)-1, d.slice(6,8))
