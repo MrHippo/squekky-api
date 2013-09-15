@@ -1,7 +1,7 @@
 SqueeGo-api
 =====================
 
-SqueeGo (http://squeego.com | http://squeego.com.au)) is a website for promoting activities (things to do). SqueeGo allows activity providers to enter all sorts of details about their activities - prices, contacts, dates, times, etc. The activities are then searchable by SqueeGo users - predominantly by location.
+SqueeGo (http://squeego.com | http://squeego.com.au) is a website for promoting activities (things to do). SqueeGo allows activity providers to enter all sorts of details about their activities - prices, contacts, dates, times, etc. The activities are then searchable by SqueeGo users - predominantly by location.
 
 The most current version of your SqueeGo activities can be downloaded from the SqueeGo server and automatically included in a webpage of your choice. "Current" here means the latest activities you submitted to SqueeGo - regardless of whether they are approved, not-approved, or under review. In this way, changes made to your SqueeGo activities will appear on your webpage immediately.
 
